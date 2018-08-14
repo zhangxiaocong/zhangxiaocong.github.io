@@ -182,21 +182,21 @@
 					<hr>
 					<ul class="experience-list">
 						<li>
-							<h3><a href="
+							<!--<h3><a href="
 http://www.exitfraud.io/play">FOMO3DM中文版</a></h3>
 							<p>
 								以太坊Dapp游戏第一名中文版的fomo3D,在以太坊网络上的乐透游戏类(Dapp),,60%稳定返现,最后一位用户获取奖池金额的百分之三十.10%推荐奖金.
 								<br/>通过研究合约源码,参考了github上改版合约,避免了fomo3d里面的合约黑洞,在确保前端页面基本架构的情况下,采用Vue对前端页面进行重构,改进了节点验证机制,,减少了请求次数,避免了电脑上比不必要的内存消耗,增加了可玩性.
 							</p>
-							<a> http://www.exitfraud.io/play</a>
+							<a> http://www.exitfraud.io/play</a>-->
 						</li>
 						<li>
 							<h3><a href="
-http://www.coinyee.io/wallet">币易交易所</a></h3>
+http://www.coinyee.io/wallet">交易所钱包</a></h3>
 							<p>
 								交易所多次遭到勒索攻击,通过搜索查询国内外文档资料,参考同行业经验,通过https,成功阻止了多次恶意攻击.在确保用户交易的同时,对网站钱包架构进行重构,增加了节点验证和消息机制和权限验证机制,确保安全。
 
-								<br/>技术实现: 1.在以太坊上,采用椭圆曲线加密算法,对发送到数据进行加密,确保交易安全. 2.使用https连接,使用ssl加密校验网站的真实性. 3.增加接口权限管理,仅开放节点广播,其他的操作都可以在没有连接geth节点的情况家和本地的服务器进行通信,防止黑客入侵. 4.对代码进行安全审计,对于第三方安全公司公布的漏洞,快速及时的修补.
+								<br/>技术实现: 1.在以太坊上,采用SHA256和椭圆曲线乘法加密算法,对发送到数据进行加密,确保交易安全. 2.使用https连接,使用ssl加密校验网站的真实性. 3.增加接口权限管理,仅开放节点广播,其他的操作都可以在没有连接geth节点的情况家和本地的服务器进行通信,防止黑客入侵. 4.对代码进行安全审计,对于第三方安全公司公布的漏洞,快速及时的修补.
 							</p>
 							<a>http://www.coinyee.io/wallet </a>
 						</li>
@@ -205,7 +205,15 @@ http://www.coinyee.io/wallet">币易交易所</a></h3>
 http://www.coinyee.io/">币易交易所</a></h3>
 							<p>
 								集交易,钱包,O2O场外交易为一体的比特币平台,一站式数字货币兑换服务
-								<br/>技术实现： 1.利用HTML5,CSS3的新特性以及js实现标准WEB页面布局以及效果，利用一些小插件来实现如弹出框、下拉菜单美化等等功能 2.使用tradingView交易图拉取服务器数据,并实现实时交易数据的展示. 3.采用Vue架构,管理数据绑定和后台交互.
+								<br/>1.采用Vue架构结合html技术和css实现标准WEB页面布局以及效果.
+
+2.绘制日线周线月线图采用tradingView.修改library保证k线图正常刷新。
+
+3.对高峰时期,添加过载保护，减少或停止http访问请求,只允许一部分用户通过,保证系统稳定.
+
+4.减少请求后台的次数,增加本地缓存,只有需要访问前端没有的数据时,才需要访问服务器.
+
+5.根据产品需求和设计图，负责PC端、移动端H5的页面开发和维护，并解决浏览器兼容，屏幕适配，配合移动开发人员解决安卓苹果系统兼容等问题
 							</p>
 							<a> http://www.coinyee.io/</a>
 						</li>
@@ -213,7 +221,7 @@ http://www.coinyee.io/">币易交易所</a></h3>
 							<h3><a href="
 http://sj.qq.com/myapp/detail.htm?apkName=com.meicai.mall">美菜商城</a></h3>
 							<p>
-								电商采购平台,减少农产品流通环节,降低商户成本,减少供应链人力. 1.采用安卓中7.0的新控件,使用Rxpermission处理6.0的权限问题 2.使用Greendao数据库，RxJava,Retrofit处理框架 3.调用微信和支付宝支付sdk,完成购物车在线支付. 4.采用新的small技术架构,对app进行彻底的组件化改造,增加容错几率,加快了项目进度.
+								电商采购平台,减少农产品流通环节,降低商户成本,减少供应链人力. 1.采用安卓中7.0的新控件,使用Rxpermission处理6.0的权限问题 2.使用Greendao数据库，RxJava,Retrofit处理框架 3.调用微信和支付宝支付sdk,完成购物车在线支付. 4.采用新的small重构项目,对app进行彻底的组件化改造,增加容错几率,降低了维护成本.
 							</p>
 							<p>http://sj.qq.com/myapp/detail.htm?apkName=com.meicai.mall</p>
 						</li>
@@ -233,7 +241,7 @@ http://sj.qq.com/myapp/detail.htm?apkName=com.tiange.live">水晶直播</a></h3>
 							<p>
 								美女在线视频直播,同城交友约会聊天,美女超多的手机直播平台. 美女主播 ,美女模特, 在读校 花 ,小鲜肉, 国内到海外,应有尽有.
 
-								<br/>技术要点： 1.采用安卓design风格设计，沉浸式布局，采用RecyclerView 处理复杂列表展示。 2.采用MVP+RxAndroid+Retrofit+GreenDao框架，使整个界面流畅。 3.接入多种推送和登录第三方SDK，才用混音算法对音频进行解码,和目标文件合成后输出指定格式的文件. 4.使用网易sdk和Face++,实现视频直播和直播中的美肤滤色处理.
+								<br/>技术要点： 1.采用安卓design风格设计，沉浸式布局，采用RecyclerView 处理复杂列表展示。 2.采用MVP+RxAndroid+Retrofit+GreenDao框架，使整个界面流畅。 3.接入多种推送和登录第三方SDK，才用混音算法对音频进行解码,和目标文件合成后输出指定格式的文件. 4.使用网易直播sdk和TuSDK,实现视频直播和直播中的美肤滤色处理.
 							</p>
 							<a> http://sj.qq.com/myapp/detail.htm?apkName=com.tiange.live</a>
 						</li>
@@ -243,7 +251,7 @@ http://sj.qq.com/myapp/detail.htm?apkName=com.cabin.parking">一咻停车</a></h
 							<p>
 								共享停车，致力于为大众提供车位共享服务，可以把自己的车位提供出来供大众使用。
 
-								<br/>技术实现 1.采用了Google提供的metral design风格开源类库； 2.项目采用了的MVP + Retrofit + RxJava+litepal框架技术. 3.内置了一个高德地图,实时描绘车辆的状态； 4.要和银行接口进行对接，以完成支付和提现的功能。
+								<br/>技术实现 1.采用了Google提供的metral design风格开源类库； 2.项目采用了的MVP + Retrofit + RxJava+litepal框架技术. 3.使用一个高德地图,内置tcp连接,上传位置信息，通过服务端获取的位置描绘车辆的状态
 							</p>
 							<a>http://sj.qq.com/myapp/detail.htm?apkName=com.cabin.parking </a>
 						</li>
